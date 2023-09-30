@@ -34,6 +34,56 @@
     <!-- favicons
 	================================================== -->
     <link rel="icon" type="image/png" href="refav.png" />
+
+    <!-- Your JavaScript code goes here -->
+    <script>
+      // Function to show the birthday modal
+      function showBirthdayModal() {
+        var birthdayModal = document.getElementById("birthdayModal");
+        birthdayModal.style.display = "block";
+      }
+
+      // Function to close the birthday modal
+      function closeBirthdayModal() {
+        var birthdayModal = document.getElementById("birthdayModal");
+        birthdayModal.style.display = "none";
+      }
+    </script>
+    <style>
+      /* Style for the modal */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow: auto; /* Make the modal content scrollable */
+      }
+
+      /* Style for the modal content */
+      .modal-content {
+        background-color: #f2f2f2;
+        margin: 15% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%; /* Increase the width of the modal */
+        max-width: 800px; /* Set a maximum width for the modal */
+        position: relative;
+        text-align: left; /* Make all text left-aligned */
+      }
+
+      /* Style for the close button */
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px;
+        cursor: pointer;
+      }
+    </style>
   </head>
 
   <body id="top">
@@ -93,10 +143,76 @@
             <a class="button stroke smoothscroll" href="#about" title=""
               >More About Me</a
             >
+            <button
+              id="showBirthdayButton"
+              class="button stroke"
+              onclick="showBirthdayModal()"
+            >
+              Happy Birthday, Reeti!
+            </button>
           </div>
         </div>
       </div>
       <!-- /intro-content -->
+
+      <!-- Birthday Post Modal (Initially Hidden) -->
+      <div id="birthdayModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeBirthdayModal()">&times;</span>
+          <h2>Happy Birthday, Tashfia Sikder!</h2>
+
+          <!-- Add the rest of your "Happy Birthday" message here -->
+          <!-- For example: -->
+          <p>
+            What should I say? How should I start? Should I say that you are not
+            pretty? You are not helpful? You are selfish? If someone said
+            anything like that, I'd go to war against them!!! It would be a sin
+            if people didn't admire your beauty, your kindness, and your
+            selflessness. <br>In truth, you are a radiant beauty, inside and out.
+            Your helpfulness knows no bounds, and your selflessness is an
+            inspiration to us all. You have a heart of gold, and your presence
+            brightens the lives of everyone lucky enough to know you. <br>Explaining
+            what you mean to me is like describing the beauty of a sunset; no
+            words can truly capture it. Explaining how wonderful you are is like
+            trying to capture a breathtaking view in a single photograph.<br>The
+            day I saw you with that red hair, I didn't express how much I adored
+            it, but trust me, I really do. I want to see you more and more
+            because you're looking absolutely stunning now, and I can't contain
+            my excitement. You have no idea how many times I've stared at your
+            pictures; you look so gorgeous, it's incredible. Man, we need to
+            meet up soon! Sometimes make this poor little boy's heart cheerful
+            by sending some pictures.<br>But wait, I can't believe I'm saying all
+            this! People might actually be envious of your honesty, but here's
+            the thing, Reeti You've touched my heart in a way that's hard to
+            explain. Your presence is like the beautiful colours of the sky, and
+            your warmth is like the sun on my skin. Every time I think of you, I
+            can't help but smile.<br>I wish I could explain how wonderful you are.
+            How could I look into your eyes and never get tired of their beauty?
+            Seeing you walk into my life makes me smile. 'How much do you mean
+            to me? And how much I love you.<br>They say I should stop mentioning
+            your name and thinking of you, but your memories hit hard when I see
+            the sky in beautiful colours, feel the sun on my skin, or feel the
+            wind brushing my cheeks. I will always remember how you made me
+            feel, and for that, I'll always love you. But it won't be the kind
+            of love that makes me crazy and yearn for someone to love me back.
+            This time, I'll love through my prayers. I'll love you even though
+            we don't belong on the same page. I'll love you enough to let you
+            go. I'll love you enough to be happy for you, even when your
+            happiness is with someone else.<br>Maybe I didn't understand how you
+            wanted to be loved, like trying to solve a complex puzzle without
+            all the pieces. But I believe that one day, it'll be like finding
+            the missing piece, and everything will make sense. Until then, I
+            hope you live your best life, and I hope you really do all the
+            things you always wanted to do.<br>Wherever you are, I'll always wish
+            you well. I think part of me will always be with you.<br>Happy Birthday
+            once again to the girl that I never wanted to keep away from me. I
+            hope you will get everything that you want in your life always
+            remember this little friend of yours.
+          </p>
+
+          <!-- You can include the entire message within this modal -->
+        </div>
+      </div>
 
       <ul class="intro-social">
         <li>
@@ -1196,7 +1312,6 @@
             </li>
           </ul>
         </div>
-
 
         <div id="go-top">
           <a class="smoothscroll" title="Back to Top" href="#top"
