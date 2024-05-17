@@ -1577,11 +1577,11 @@ header .logo a {
 }
 @media only screen and (max-width:768px) {
 	.intro-info img {
-		height: 7.8rem;
-		width: 7.8rem;
+		height: 30rem;
+		width: 25rem;
 	}
 	.intro-info .lead {
-		padding-left: 11rem;
+		padding-left: 30rem;
 	}
 	.about-content h3 {
 		text-align: center;
@@ -1603,8 +1603,8 @@ header .logo a {
 		margin-top: 3rem;
 	}
 	.intro-info img {
-		height: 6.6rem;
-		width: 6.6rem;
+		height: 25rem;
+		width: 22rem;
 		float: none;
 		display: inline-block;
 	}
