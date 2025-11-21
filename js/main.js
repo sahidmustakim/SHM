@@ -246,28 +246,30 @@ gsap.utils.toArray('.research-item-alt').forEach((item, i) => {
 });
 
 // --- Horizontal Scroll for Projects ---
-// Only apply on larger screens and if element exists
-if (window.innerWidth > 768) {
-    const sections = gsap.utils.toArray('.horizontal-scroll-section');
-    if (sections.length > 0) {
-        sections.forEach(section => {
-            const container = section.querySelector('.horizontal-scroll-container');
-            if (container) {
-                gsap.to(container, {
-                    x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: section,
-                        pin: true,
-                        scrub: 1,
-                        end: () => "+=" + container.scrollWidth,
-                        invalidateOnRefresh: true
-                    }
-                });
-            }
-        });
+ScrollTrigger.matchMedia({
+    // Desktop only
+    "(min-width: 769px)": function () {
+        const sections = gsap.utils.toArray('.horizontal-scroll-section');
+        if (sections.length > 0) {
+            sections.forEach(section => {
+                const container = section.querySelector('.horizontal-scroll-container');
+                if (container) {
+                    gsap.to(container, {
+                        x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: section,
+                            pin: true,
+                            scrub: 1,
+                            end: () => "+=" + container.scrollWidth,
+                            invalidateOnRefresh: true
+                        }
+                    });
+                }
+            });
+        }
     }
-}
+});
 
 // Navbar Scroll Effect
 window.addEventListener('scroll', () => {
@@ -278,3 +280,42 @@ window.addEventListener('scroll', () => {
         navbar.style.boxShadow = 'none';
     }
 });
+
+// --- Responsive Navigation ---
+const navSlide = () => {
+    const burger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+
+    if (burger) {
+        burger.addEventListener('click', () => {
+            // Toggle Nav
+            nav.classList.toggle('nav-active');
+
+            // Animate Links
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+
+            // Burger Animation
+            burger.classList.toggle('toggle');
+        });
+
+        // Close menu when link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+                navLinks.forEach(link => {
+                    link.style.animation = '';
+                });
+            });
+        });
+    }
+}
+
+navSlide();
