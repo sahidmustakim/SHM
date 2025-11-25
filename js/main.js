@@ -32,7 +32,7 @@ document.addEventListener('mousemove', (e) => {
     gsap.to(follower, { x: e.clientX, y: e.clientY, duration: 0.3 });
 });
 
-document.querySelectorAll('a, button, .project-card, .research-card').forEach(el => {
+document.querySelectorAll('a, button, .project-card, .research-item').forEach(el => {
     el.addEventListener('mouseenter', () => {
         gsap.to(cursor, { scale: 0 });
         gsap.to(follower, { scale: 1.5, background: 'rgba(59, 130, 246, 0.1)' });
@@ -217,7 +217,7 @@ gsap.utils.toArray('.skill-tag').forEach((tag, i) => {
     });
 });
 
-gsap.utils.toArray('.research-card').forEach((card, i) => {
+gsap.utils.toArray('.research-item').forEach((card, i) => {
     gsap.from(card, {
         scrollTrigger: {
             trigger: card,
