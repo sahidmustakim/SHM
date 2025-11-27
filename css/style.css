@@ -1494,7 +1494,9 @@ body:not(.light-mode) .research-item:hover .research-img {
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 15px rgba(59, 130, 246, 0.4);
     border-color: var(--primary-color);
     transform: translateY(-5px);
-}/* Resume Section Styling */
+}
+
+/* Resume Section Styling */
 .resume-subsection {
     margin-bottom: 5rem;
 }
@@ -1663,4 +1665,49 @@ body:not(.light-mode) .research-item:hover .research-img {
     .resume-heading {
         font-size: 1.5rem;
     }
+}
+/* Course Code Tooltips */
+.course-code {
+    position: relative;
+    display: inline-block;
+    padding: 2px 8px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: help;
+    transition: all 0.3s ease;
+    margin: 0 2px;
+}
+
+.course-code:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.course-code::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    padding: 8px 12px;
+    background: var(--dark-card);
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    font-weight: normal;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.course-code:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
 }
