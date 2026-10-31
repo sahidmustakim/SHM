@@ -1808,3 +1808,8 @@ body.light-mode .course-badge::before {
     opacity: 1;
     transform: translateX(-50%) translateY(-4px);
 }
+/* Paper figures are transparent PNGs drawn for white paper; keep them on white in both themes */
+.paper-figure {
+    background: #fff;
+    padding: 1rem;
+}
