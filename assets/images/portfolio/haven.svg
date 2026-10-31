@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="700" viewBox="0 0 1050 700">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a6b8a"/><stop offset="1" stop-color="#0e353f"/></linearGradient></defs>
+  <rect width="1050" height="700" fill="url(#g)"/>
+  <text x="525" y="330" text-anchor="middle" font-family="Poppins, Helvetica, Arial, sans-serif" font-weight="700" font-size="110" fill="#fff">Haven</text>
+  <text x="525" y="420" text-anchor="middle" font-family="Poppins, Helvetica, Arial, sans-serif" font-size="34" fill="#ffffffcc">BCI-powered emotional speech agent</text>
+</svg>

@@ -156,7 +156,7 @@ if (canvas) {
 // --- Typing Animation ---
 const typingText = document.querySelector('.typing-text');
 if (typingText) {
-    const roles = ['CS Researcher', 'Developer', 'ML Enthusiast', 'Lecturer'];
+    const roles = ['Multimodal AI Researcher', 'Data Science Student', 'Developer', 'Former Faculty'];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
